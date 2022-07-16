@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>thêm sản phẩm</title>
+<link rel="stylesheet" type="text/css" href="../Css/basecss.css" />
+<link rel="stylesheet" type="text/css" href="../Css/webadmincss.css" />
+<link rel="stylesheet" type="text/css" href="../fontawesome-free-5.14.0-web/css/all.min.css" />
+<script type="text/javascript" src="../JavaScript/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="../Bootstrap4/bootstrap-4.5.3-dist/css/bootstrap.css">
+<script type="text/javascript" src="../Bootstrap4/bootstrap-4.5.3-dist/js/bootstrap.js" defer></script>
+<script type="text/javascript" src="../JavaScript/adminJs.js" defer></script>
+<script type="text/javascript" src="../JavaScript/temp.js" defer></script>
+</head>
+
+<body>
+
+	<header class="header">
+<div class="grid">
+  <nav class="header__navbar">
+    <ul class="header__navbar-list">
+      <li class="header__navbar-items header__navbar-user"> 
+        <img src="../Image/Banner/banner-dong-ho-nam.png" alt="" class="header__navbar-user-img"> 
+				<span class="header__navbar-user-name">Admin</span>
+		    <div class="header__navbar-link__separator"></div>
+		    <a class="header__navbar-link" href="../Admin/./LoginAdmin.html">Đăng xuất
+		    </a>	
+      </li>
+    </ul>
+  </nav>
+</div>
+<div class="header-with-search">
+
+  <div class="header__logo"><img class="logo" src="../Image/logo-dong-ho.png"></div>
+  <div class="header__search">
+      <div class="header__search-wrap">
+          <!--
+<div class="header__logo">
+<img class="logo" src="https://pngimage.net/wp-content/uploads/2018/06/gshock-logo-png-10.png" alt="">
+</div>
+-->
+          <input class="header__search-input" value placeholder="Nhập để tìm kiếm" />
+          <ul class="header__search-history-list">
+              <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
+              <li class="header__search-history-icon"><a href="">xiaomi</a></li>
+              <li class="header__search-history-icon"><a href="">iphone</a></li>
+          </ul>
+      </div>
+      <!--Chỉnh sửa lại khoảng cách của nút tìm kiếm-->
+      <button class="header__search-btn"> <i class="header__search-btn-icon fas fa-search"></i> </button>
+  </div>
+</div>
+</header>
+	<div class="container-fluid" >
+		<div class="grid" >
+
+			<div class="grid__row" >
+				<div class="grid__column-2">	
+					<nav class="catagory" >
+						<span  class="catogory-heading" style="font-size: 18px; font-weight: 700; text-align: center; text-decoration: none;"   > 
+							<i class="fas fa-list-ul catogory-heading-icon"></i> Chức năng
+						</span>
+						<ul class="catogory-list">
+						  <li class="catagory-item"> 
+							<a class="catagory-item__link product-manager" style="font-size: 15px; font-weight: 700; text-decoration: none;" type="button" href="Amin-qlsp.html" >Quản lí sản phẩm</a> 
+              			  </li>
+             			  <li class="catagory-item"> 
+						  	<a class="catagory-item__link product-manager" style="font-size: 15px; font-weight: 700; text-decoration: none;" type="button" href="Admin-qlđh.html" >Quản lí đơn hàng</a> 
+						  </li>					
+						  <li class="catagory-item">
+							<a class="catagory-item__link special" style="font-size: 15px; font-weight: 700; text-decoration: none;" type="button" href="Admin-tkkd.html"  >Thống kê kinh doanh</a> 
+						  </li>
+					    <li class="catagory-item">
+							<a class="catagory-item__link product-manager" style="font-size: 15px; font-weight: 700; text-decoration: none;" type="button"  href="Amin-qlnd.html" >Quản lí người dùng</a> 
+						  </li>
+						  <li>
+							  
+						  </li>	
+						</ul>
+					</nav>
+					  
+                </div>
+        
+                
+
+				<div class="grid__column-10" style="font-size: 14px;" >
+					<div class="modal-dialog modal-lg" style="box-shadow: rgba(0,0,0,0.3) 1px 1px 5px; max-width: 950px;" >
+                        <div class="modal-content">
+                            <div class="modal-header" style="border-bottom: none;">
+                                <h4 >Thêm sản phẩm</h4>
+                               
+                            </div>
+                            <div class="modal-body"  style="height: 400px;">
+                            
+                                <form >
+                                    <div class="row">
+                                        
+                                        <div class="col-md-4">
+                                        <img class="img-edit"   src="fontawesome-free-5.14.0-web/images.png" alt="" id="temp">
+
+                                        <div >
+                                          <div id="displayImg" class="img-add" ></div>
+                                          <label for="inputdefault"></label>
+                                          <input  type="file"  id="onload" onchange="ImgFile()" >
+                                          <button class="btn btn-success" style="height: 50%;">Xóa ảnh</button>
+                                          
+                                        </div> 
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-7">
+											<div class="input-group">
+											<label for="inputPassword4">Tên sản phẩm </label>
+											<input style="width: 300px;" type="email"  id="inputPassword4" placeholder="Tên sản phẩm">
+											</div>
+											<div class="input-group" >
+											<label for="inputPrice">Mã sản phẩm</label>
+											<input style="width: 300px;" type="text" id="inputPrice" placeholder="Mã sản phẩm">
+											</div>
+											<div style="padding-top: 15px;"></div>
+											<div class="input-group">
+											<label for="inputState">Thương hiệu</label><br>
+											<select id="inputState" style="text-align: center;">
+												<option selected>--Chọn thương hiệu--</option>
+												<option>Casio</option>
+												<option>Seiko</option>
+											</select>
+											</div>
+											<div class="input-group">
+											<label for="inputPrice">Giá</label>
+											<input style="width: 300px;" type="text" id="inputPrice" placeholder="giá sản phẩm">
+											</div>
+											
+                                      </div>
+									  
+                                    </div>
+                                    
+                                    
+                                    
+                                  </form>
+                                  
+                                </div>
+                            <div class="modal-footer" style="border-top: none;">
+                                <button type="button" class="btn btn-success" data-dismiss="modal" > Thêm</button>
+                            </div>
+                        </div>
+                        
+                    	
+				</div>
+            </div>    
+		</div>
+        
+            
+                            
+                       
+        </div>
+	</div>
+	<footer class="footer">
+        <div class="grid">
+            <div class="grid__row">
+                <div class="grid__column-2-4-1">
+                    <div class="hotline-bt">
+                        <a class="hotline-bt__detail" title="Tư Vấn Bán Hàng">
+                1900 0325
+            <span>
+                <i class="fas fa-phone-square-alt"></i>
+                Tư vấn bán hàng
+            </span>
+            </a>
+                    </div>
+                    <div class="hotline-bt">
+                        <a class="hotline-bt__detail" title="Hỗ Trợ Dịch Vụ">
+                0924 714 551
+            <span>
+                <i class="far fa-comment-alt"></i>
+                Hỗ trợ dịch vụ
+            </span>
+            </a>
+                    </div>
+                    <div class="hotline-bt">
+                        <a class="hotline-bt__detail" title="Tư Vấn Kĩ Thuật">
+                0924 714 551
+            <span>
+                <i class="fas fa-cog"></i>
+                Tư vấn kĩ thuật
+            </span>
+            </a>
+                    </div>
+                </div>
+                <div class="grid__column-2-4-1">
+                    <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"> <a href=" " class="footer__item-link">Chăm sóc khách hàng</a> </li>
+                        <li class="footer__item"> <a href=" " class="footer__item-link">Hướng dẫn đổi trả</a> </li>
+                        <li class="footer__item"> <a href=" " class="footer__item-link">Chính sách bảo hành</a> </li>
+                        <li class="footer__item"> <a href=" " class="footer__item-link">Tra cứu bảo hành</a> </li>
+                    </ul>
+                </div>
+                <div class="grid__column-2-4-1">
+                    <h3 class="footer__heading">Thương hiệu</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"> <a href=" " class="footer__item-link">Casio</a> </li>
+                        <li class="footer__item"> <a href=" " class="footer__item-link">Tissot</a> </li>
+                        <li class="footer__item"> <a href=" " class="footer__item-link">Fossil</a> </li>
+                        <li class="footer__item"> <a href=" " class="footer__item-link">Orient</a> </li>
+                        <li class="footer__item"> <a href=" " class="footer__item-link">Citizen</a> </li>
+                        <li class="footer__item"> <a href=" " class="footer__item-link">G Shock</a> </li>
+                        <li class="footer__item"> <a href=" " class="footer__item-link">Seiko</a> </li>
+                    </ul>
+                </div>
+                <div class="grid__column-2-4-1">
+                    <h3 class="footer__heading">Tiện ích</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"> <a href=" " class="footer__item-link">Kiến thức về đồng hồ</a> </li>
+                        <li class="footer__item"> <a href=" " class="footer__item-link">Thông tin liên hệ</a> </li>
+                        <li class="footer__item"> <a href=" " class="footer__item-link">Tuyển dụng</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
